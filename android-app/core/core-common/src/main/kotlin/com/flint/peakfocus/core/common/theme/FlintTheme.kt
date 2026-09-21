@@ -19,63 +19,68 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 /**
- * Flint brand palette + semantic values. Mirror of design/tokens.json — keep in sync
+ * noScroll brand palette + semantic values. Mirror of design/tokens.json — keep in sync
  * (tokens.json is the single source; this file is its hand-maintained Compose binding).
+ *
+ * Symbol names below still say `Flint*` — a code-identifier rename (this object, the
+ * `com.flint.peakfocus` package, and every call site) is a separate, larger follow-up; only
+ * the hex values have been repointed to the noScroll palette so far.
  */
 object FlintPalette {
     // Brand palette
-    val Flint = Color(0xFF2C2C2A)
-    val Graphite = Color(0xFF5F5E5A)
-    val Spark = Color(0xFFEF9F27)
-    val Ember = Color(0xFFFAC775)
-    val Bronze = Color(0xFFBA7517)
-    val Stone = Color(0xFFF1EFE8)
-    val Ash = Color(0xFFB4B2A9)
-    val OnAccent = Color(0xFF412402)
+    val Flint = Color(0xFF0B1120) // Ink
+    val Graphite = Color(0xFF55606B) // Slate
+    val Spark = Color(0xFF1C7ED6) // Pop Blue — primary accent
+    val Ember = Color(0xFF9FD8F5) // Baby Blue — signature/light accent
+    val Bronze = Color(0xFF14548C) // Deep Blue — pressed state
+    val Stone = Color(0xFFF2FAFF) // Cloud
+    val Ash = Color(0xFF9FB3C8) // Mist
+    val OnAccent = Color(0xFFFFFFFF) // text/icon on Pop Blue / Deep Blue
+    val OnAccentMuted = Color(0xFF0B1120) // text/icon on Baby Blue (too light for white text)
 
     // Semantic — light
     val SurfaceLight = Color(0xFFFFFFFF)
-    val SurfaceVariantLight = Color(0xFFE7E5DC)
+    val SurfaceVariantLight = Color(0xFFE4F1FA)
     val SurfaceContainerLowestLight = Color(0xFFFFFFFF)
-    val SurfaceContainerLowLight = Color(0xFFFAF9F4)
-    val SurfaceContainerLight = Color(0xFFF5F3EC)
-    val SurfaceContainerHighLight = Color(0xFFE7E5DC)
-    val SurfaceContainerHighestLight = Color(0xFFDDDBD0)
-    val BorderLight = Color(0xFFD3D1C7)
-    val BorderVariantLight = Color(0xFFE0DED3)
+    val SurfaceContainerLowLight = Color(0xFFF8FCFF)
+    val SurfaceContainerLight = Color(0xFFF2FAFF)
+    val SurfaceContainerHighLight = Color(0xFFE4F1FA)
+    val SurfaceContainerHighestLight = Color(0xFFD3E8F5)
+    val BorderLight = Color(0xFFD8E6F0)
+    val BorderVariantLight = Color(0xFFE4F1FA)
     val DangerLight = Color(0xFFC0392B)
     val DangerContainerLight = Color(0xFFF6DAD5)
     val OnDangerContainerLight = Color(0xFF6E1F16)
 
     // Semantic — dark
-    val SurfaceDark = Color(0xFF3A3A37)
-    val SurfaceVariantDark = Color(0xFF46453F)
-    val SurfaceContainerLowestDark = Color(0xFF262624)
-    val SurfaceContainerLowDark = Color(0xFF323230)
-    val SurfaceContainerDark = Color(0xFF3A3A37)
-    val SurfaceContainerHighDark = Color(0xFF42423E)
-    val SurfaceContainerHighestDark = Color(0xFF4A4A44)
-    val BorderDark = Color(0xFF5F5E5A)
-    val BorderVariantDark = Color(0xFF514F49)
+    val SurfaceDark = Color(0xFF141B29)
+    val SurfaceVariantDark = Color(0xFF1C2436)
+    val SurfaceContainerLowestDark = Color(0xFF0B1120)
+    val SurfaceContainerLowDark = Color(0xFF10182A)
+    val SurfaceContainerDark = Color(0xFF141B29)
+    val SurfaceContainerHighDark = Color(0xFF1C2436)
+    val SurfaceContainerHighestDark = Color(0xFF232C42)
+    val BorderDark = Color(0xFF2A3550)
+    val BorderVariantDark = Color(0xFF1C2436)
     val DangerDark = Color(0xFFE07A6E)
     val DangerContainerDark = Color(0xFF5C2A23)
     val OnDangerContainerDark = Color(0xFFF3C1BA)
 }
 
-// surfaceTint == surface on purpose (both schemes): tonal elevation must not wash amber over
-// surfaces — Flint's depth comes from the explicit surfaceContainer ladder, never from tint.
+// surfaceTint == surface on purpose (both schemes): tonal elevation must not wash blue over
+// surfaces — noScroll's depth comes from the explicit surfaceContainer ladder, never from tint.
 private val DarkColors = darkColorScheme(
     primary = FlintPalette.Spark,
     onPrimary = FlintPalette.OnAccent,
     primaryContainer = FlintPalette.Ember,
-    onPrimaryContainer = FlintPalette.OnAccent,
+    onPrimaryContainer = FlintPalette.OnAccentMuted,
     inversePrimary = FlintPalette.Bronze,
     secondary = FlintPalette.Ember,
-    onSecondary = FlintPalette.OnAccent,
+    onSecondary = FlintPalette.OnAccentMuted,
     // tokens.json selectedContainer — FilterChip/Segmented selected states read these; left
     // unmapped they render M3's baseline lavender (caught live on the emulator).
     secondaryContainer = FlintPalette.Ember,
-    onSecondaryContainer = FlintPalette.OnAccent,
+    onSecondaryContainer = FlintPalette.OnAccentMuted,
     tertiary = FlintPalette.Bronze,
     onTertiary = FlintPalette.Stone,
     background = FlintPalette.Flint,
@@ -104,12 +109,12 @@ private val LightColors = lightColorScheme(
     primary = FlintPalette.Spark,
     onPrimary = FlintPalette.OnAccent,
     primaryContainer = FlintPalette.Ember,
-    onPrimaryContainer = FlintPalette.OnAccent,
+    onPrimaryContainer = FlintPalette.OnAccentMuted,
     inversePrimary = FlintPalette.Ember,
     secondary = FlintPalette.Bronze,
     onSecondary = FlintPalette.Stone,
     secondaryContainer = FlintPalette.Ember,
-    onSecondaryContainer = FlintPalette.OnAccent,
+    onSecondaryContainer = FlintPalette.OnAccentMuted,
     tertiary = FlintPalette.Bronze,
     onTertiary = FlintPalette.Stone,
     background = FlintPalette.Stone,
@@ -193,7 +198,7 @@ object FlintMotion {
     const val PressedScale = 0.98f
 }
 
-/** Flint's Material3 theme. Dark is the brand-primary look. */
+/** noScroll's Material3 theme. Dark is the brand-primary look. */
 @Composable
 fun FlintTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),

@@ -3,16 +3,21 @@ import SwiftUI
 import UIKit
 #endif
 
-/// Flint brand palette. Mirror of design/tokens.json — keep in sync.
+/// noScroll brand palette. Mirror of design/tokens.json — keep in sync.
 /// Provides both SwiftUI `Color` (host app) and `UIColor` (shield extension) accessors.
+///
+/// Symbol names below still say `Flint*`/`flint*` — a code-identifier rename (this type, the
+/// `com.flint.peakfocus`-equivalent bundle IDs, the App Group, and every call site) is a
+/// separate, larger follow-up; only the hex values have been repointed to the noScroll palette.
 public enum FlintBrand {
-    public static let flintHex: UInt32 = 0x2C2C2A
-    public static let graphiteHex: UInt32 = 0x5F5E5A
-    public static let sparkHex: UInt32 = 0xEF9F27
-    public static let emberHex: UInt32 = 0xFAC775
-    public static let bronzeHex: UInt32 = 0xBA7517
-    public static let stoneHex: UInt32 = 0xF1EFE8
-    public static let onAccentHex: UInt32 = 0x412402
+    public static let flintHex: UInt32 = 0x0B1120 // Ink
+    public static let graphiteHex: UInt32 = 0x55606B // Slate
+    public static let sparkHex: UInt32 = 0x1C7ED6 // Pop Blue — primary accent
+    public static let emberHex: UInt32 = 0x9FD8F5 // Baby Blue — signature/light accent
+    public static let bronzeHex: UInt32 = 0x14548C // Deep Blue — pressed state
+    public static let stoneHex: UInt32 = 0xF2FAFF // Cloud
+    public static let onAccentHex: UInt32 = 0xFFFFFF // text/icon on Pop Blue / Deep Blue
+    public static let onAccentMutedHex: UInt32 = 0x0B1120 // text/icon on Baby Blue
 
     public static var flint: Color { color(flintHex) }
     public static var graphite: Color { color(graphiteHex) }
@@ -21,6 +26,7 @@ public enum FlintBrand {
     public static var bronze: Color { color(bronzeHex) }
     public static var stone: Color { color(stoneHex) }
     public static var onAccent: Color { color(onAccentHex) }
+    public static var onAccentMuted: Color { color(onAccentMutedHex) }
 
     private static func color(_ hex: UInt32) -> Color {
         Color(

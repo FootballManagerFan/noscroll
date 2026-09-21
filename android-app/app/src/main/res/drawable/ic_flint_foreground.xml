@@ -1,8 +1,8 @@
 <!--
-    Adaptive-icon foreground: the tri-facet strike mark (design/logo-mark.svg geometry, 56
-    viewport) scaled 48/56 and centered at 54,54 — farthest ink lands at radius ~18, well
-    inside the 66dp safe zone. Body is stone on the charcoal background layer, the
-    design/app-icon.svg dark-plate treatment; colors mirror design/tokens.json.
+    Adaptive-icon foreground: the feed-lines-and-slash mark (design/logo-mark.svg geometry, 56
+    viewport) scaled 48/56 and centered at 54,54 — farthest ink lands well inside the 66dp safe
+    zone. Bars are cloud on the ink background layer, the design/app-icon.svg dark-plate
+    treatment; colors mirror design/tokens.json.
 -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="108dp"
@@ -16,8 +16,13 @@
         android:scaleY="0.8571"
         android:translateX="26"
         android:translateY="26">
-        <path android:pathData="M14,44 L28,8 L36,26 L44,18 L30,48 Z" android:fillColor="@color/flint_stone" />
-        <path android:pathData="M36,26 L44,18 L42,30 Z" android:fillColor="@color/flint_spark" />
-        <path android:pathData="M30,48 L42,30 L44,40 Z" android:fillColor="@color/flint_ember" />
+        <path android:pathData="M7,12 L49,12 L49,19 L7,19 Z" android:fillColor="@color/flint_stone" />
+        <path android:pathData="M7,24.5 L49,24.5 L49,31.5 L7,31.5 Z" android:fillColor="@color/flint_stone" />
+        <path android:pathData="M7,37 L49,37 L49,44 L7,44 Z" android:fillColor="@color/flint_stone" />
+        <path
+            android:pathData="M4.5,51.5 L51.5,4.5"
+            android:strokeColor="@color/flint_ember"
+            android:strokeWidth="8"
+            android:strokeLineCap="round" />
     </group>
 </vector>

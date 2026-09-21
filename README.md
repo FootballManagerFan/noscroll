@@ -1,32 +1,32 @@
 <div align="center">
 
-<img src="design/app-icon.svg" width="88" height="88" alt="Flint logo" />
+<img src="design/app-icon.svg" width="88" height="88" alt="noScroll logo" />
 
-# Flint — Peak Focus
+# noScroll
 
-**Everything Opal does. Zero cost. Forever.**
+**Put the phone down.**
 
 A free, open-source alternative to [Opal](https://www.opal.so). The whole focus engine —
-app & website blocking, schedules without a Flint-imposed count cap, hardcore Deep Focus,
+app & website blocking, schedules without a noScroll-imposed count cap, hardcore Deep Focus,
 time & open limits — with
-**no paywall, no accounts, no telemetry**. Local-first. Built in the open.
+**no paywall on the basics, no accounts, no telemetry**. Local-first. Built in the open.
 
-![status](https://img.shields.io/badge/status-early%20development-EF9F27?style=flat-square)
-![license](https://img.shields.io/badge/license-MIT-2C2C2A?style=flat-square)
-![ios](https://img.shields.io/badge/iOS-16%2B-2C2C2A?style=flat-square)
-![android](https://img.shields.io/badge/Android-6%2B-2C2C2A?style=flat-square)
-[![iOS CI](https://github.com/Prakashmaheshwaran/flint-app/actions/workflows/ios.yml/badge.svg)](https://github.com/Prakashmaheshwaran/flint-app/actions/workflows/ios.yml)
-[![Android CI](https://github.com/Prakashmaheshwaran/flint-app/actions/workflows/android.yml/badge.svg)](https://github.com/Prakashmaheshwaran/flint-app/actions/workflows/android.yml)
+![status](https://img.shields.io/badge/status-early%20development-1C7ED6?style=flat-square)
+![license](https://img.shields.io/badge/license-MIT-0B1120?style=flat-square)
+![ios](https://img.shields.io/badge/iOS-16%2B-0B1120?style=flat-square)
+![android](https://img.shields.io/badge/Android-6%2B-0B1120?style=flat-square)
+[![iOS CI](https://github.com/FootballManagerFan/noscroll/actions/workflows/ios.yml/badge.svg)](https://github.com/FootballManagerFan/noscroll/actions/workflows/ios.yml)
+[![Android CI](https://github.com/FootballManagerFan/noscroll/actions/workflows/android.yml/badge.svg)](https://github.com/FootballManagerFan/noscroll/actions/workflows/android.yml)
 
 </div>
 
 ---
 
-## Get Flint
+## Get noScroll
 
-[![Download the Android APK](https://img.shields.io/badge/Android%20APK-download-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://github.com/Prakashmaheshwaran/flint-app/releases/latest)
-[![Google Play — coming soon](https://img.shields.io/badge/Google%20Play-coming%20soon-555555?style=for-the-badge&logo=googleplay&logoColor=white)](https://github.com/Prakashmaheshwaran/flint-app/releases/latest)
-[![App Store — coming soon](https://img.shields.io/badge/App%20Store-coming%20soon-0D96F6?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/Prakashmaheshwaran/flint-app/releases/latest)
+[![Download the Android APK](https://img.shields.io/badge/Android%20APK-download-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://github.com/FootballManagerFan/noscroll/releases/latest)
+[![Google Play — coming soon](https://img.shields.io/badge/Google%20Play-coming%20soon-555555?style=for-the-badge&logo=googleplay&logoColor=white)](https://github.com/FootballManagerFan/noscroll/releases/latest)
+[![App Store — coming soon](https://img.shields.io/badge/App%20Store-coming%20soon-0D96F6?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/FootballManagerFan/noscroll/releases/latest)
 
 - **Android — download now:** grab `flint-*-android-debug.apk` from the
   [latest release](https://github.com/Prakashmaheshwaran/flint-app/releases/latest) and allow
@@ -40,37 +40,40 @@ time & open limits — with
 
 ---
 
-## Why Flint
+## Why noScroll
 
 Opal gates the features that actually make blocking *stick* behind "Opal Pro" — recurring
 schedules, the non-bypassable **Deep Focus / Hardcore** mode, the **Allow List** brick-phone
-mode, and the **Emergency Pass**. Flint's wedge is simple: **ship the entire engine for free.**
+mode, and the **Emergency Pass**. noScroll's wedge is simple: **ship the core blocking engine
+for free, forever — the same free tier Opal itself always keeps free, no worse.**
 
-Flint takes nothing from you in return. No sign-up. No analytics. No cloud. Your blocklists
-and usage data never leave your device. The hard part was never the paywall (we just remove
-it) — it's faithfully reimplementing the OS-level enforcement that makes a block real. That's
-what this project is.
+No sign-up required to use it. No analytics. No cloud. Your blocklists and usage data never
+leave your device. The hard part was never the paywall — it's faithfully reimplementing the
+OS-level enforcement that makes a block real. That's what this project is.
 
-### What's free here that Opal charges for
+### Free vs. Pro (mirrors Opal's own split)
 
-| Feature | Opal | **Flint** |
-|---|:---:|:---:|
-| Block Now / focus timer | Free | **Free** |
-| Scheduled sessions | Free (≤ 24h ahead) | **Free, no 24h advance cap** |
-| Recurring / Smart Schedules | 💰 Pro (capped free) | **Free, no Flint-imposed count cap¹** |
-| Block List | Free | **Free** |
-| **Allow List** (brick-phone mode) | 💰 Pro | **Free** |
-| **Deep Focus / Hardcore** (non-bypassable) | 💰 Pro | **Free** |
-| Time Limits | Free | **Free** |
-| Open Limits | Free (no-reset tier 💰) | **Free, incl. no-reset** |
-| Anti-bypass suite | Free | **Free** |
-| **Emergency Pass** | 💰 Pro | **Free, weekly** |
-| Accounts required | — | **None** |
-| Telemetry / ads | — | **None** 
+| Feature | Opal Free | Opal Pro | **noScroll Free** | **noScroll Pro** |
+|---|:---:|:---:|:---:|:---:|
+| Block Now / focus timer | ✅ | ✅ | **✅** | **✅** |
+| Scheduled sessions | ✅ (≤ 24h ahead) | ✅ | **✅, no 24h advance cap** | **✅** |
+| Block List | ✅ | ✅ | **✅** | **✅** |
+| Time Limits | ✅ | ✅ | **✅** | **✅** |
+| Anti-bypass suite | ✅ | ✅ | **✅** | **✅** |
+| Recurring / Smart Schedules | capped | ✅ uncapped | capped | **✅ no noScroll-imposed count cap¹** |
+| **Allow List** (brick-phone mode) | — | 💰 | — | **💰** |
+| **Deep Focus / Hardcore** (non-bypassable) | — | 💰 | — | **💰** |
+| Open Limits (no-reset tier) | — | 💰 | — | **💰** |
+| **Emergency Pass** | — | 💰 | — | **💰, weekly** |
+| Accounts required | — | — | **None** | **None** |
+| Telemetry / ads | — | — | **None** | **None** |
 
 ¹ iOS still has a finite, undocumented `DeviceActivity` registration pool shared by schedules,
-Time Limits, Open Limits, and other monitors. Flint records and surfaces actual refusals; the
+Time Limits, Open Limits, and other monitors. noScroll records and surfaces actual refusals; the
 near-cap warning around 20 registrations is empirical, not an Apple-published limit.
+
+> Note: the Free/Pro split above is the intended direction, not yet implemented — there is no
+> billing or entitlement layer in the codebase today. See [Status](#status).
 
 Full feature parity map: [`docs/research/01-opal-feature-inventory.md`](docs/research/01-opal-feature-inventory.md).
 
@@ -79,7 +82,7 @@ Full feature parity map: [`docs/research/01-opal-feature-inventory.md`](docs/res
 ## How it works (the honest version)
 
 Blocking is an OS-privileged capability, and the two platforms are completely different — so
-Flint is **two native apps**, not one cross-platform build:
+noScroll is **two native apps**, not one cross-platform build:
 
 - **iOS** — Apple's **Screen Time API** (`FamilyControls` · `ManagedSettings` · `DeviceActivity`).
   The blocking runs in system extensions the OS drives even when the app is closed.
@@ -95,7 +98,7 @@ Why these decisions were made: [`docs/architecture/00-architecture-decisions.md`
 ## Repository layout
 
 ```
-flint/
+noscroll/
 ├── ios-app/        Native iOS app (Swift / SwiftUI) — host app + 4 Screen Time extensions
 ├── android-app/    Native Android app (Kotlin / Jetpack Compose) — multi-module
 ├── design/         Brand tokens, palette, logo — single source of truth
@@ -138,7 +141,7 @@ time-change-guard broadcast path, and Path A uninstall-guard shielding. See
 
 **iOS — comprehensive; earlier verticals verified in the Simulator + unit tests, the newest merges
 await a compile pass.** Verified earlier (builds, `FlintCore` unit tests, Simulator runs): Block
-Now, Schedules with no Flint-imposed count cap, Time Limits, free Hardcore + free weekly
+Now, Schedules with no noScroll-imposed count cap, Time Limits, free Hardcore + free weekly
 Emergency Pass, website
 blocking, app groups/presets + Allow List, app-open PIN, embedded usage report. Merged since,
 **compile verification still pending on a macOS toolchain**: Safari/Private-Browsing restrictions,
@@ -146,7 +149,7 @@ Focus Filter integration, Siri & Shortcuts intents, Sleep Mode + Morning Assist,
 routine-template library, Open Limits
 (the enforcement engine, and now also the config UI + shield arming + day-boundary re-arm, so the
 feature is user-reachable end-to-end in code), and a **Hardcore uninstall guard**
-(`denyAppRemoval` while a Hardcore session runs, so deleting Flint can't end a "non-bypassable"
+(`denyAppRemoval` while a Hardcore session runs, so deleting noScroll can't end a "non-bypassable"
 block — pending that same compile pass). And the standing
 Apple caveat: Screen Time **shield enforcement can only be proven on a physical device** (the
 Simulator can't grant Family Controls or apply shields) — an on-device hardware pass is still
@@ -172,7 +175,7 @@ make android-install  # build + install on a connected device/emulator
 
 ## Roadmap (v1)
 
-**Implemented:** core blocking loop, schedules with no Flint-imposed count cap, Time Limits,
+**Implemented:** core blocking loop, schedules with no noScroll-imposed count cap, Time Limits,
 break levels incl. **free
 Hardcore**, free weekly Emergency Pass, website blocking, app groups + Allow List, a preset
 routine library, app-PIN, usage
@@ -196,7 +199,7 @@ cross-device sync. Details:
 
 ## Contributing
 
-Flint exists because blocking shouldn't cost money. PRs, platform expertise, and bug reports
+noScroll exists because blocking shouldn't cost money. PRs, platform expertise, and bug reports
 welcome — see [`CONTRIBUTING.md`](CONTRIBUTING.md) and [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md).
 
 ## License
