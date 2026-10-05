@@ -44,6 +44,7 @@ struct OpenLimitsView: View {
                 }
             }
         }
+        .nosFormStyle()
         .navigationTitle("Open Limits")
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
@@ -56,17 +57,13 @@ struct OpenLimitsView: View {
     }
 
     private var emptyState: some View {
-        VStack(spacing: 12) {
-            Image(systemName: "hand.tap")
-                .font(.system(size: 44)).foregroundStyle(FlintBrand.spark)
-            Text("No open limits yet").font(.headline)
-            Text("Cap how many times a day an app can be opened — e.g. 3 opens of social. "
-                 + "Each pass-through from the block screen spends one. Free.")
-                .font(.subheadline).foregroundStyle(.secondary).multilineTextAlignment(.center)
-            Button { showAdd = true } label: { Text("Add an open limit") }
-                .buttonStyle(.borderedProminent).tint(FlintBrand.spark)
-        }
-        .padding(32)
+        NosEmptyState(
+            symbol: "hand.tap",
+            title: "No open limits yet",
+            message: "Cap how many times a day an app can be opened — e.g. 3 opens of social. "
+                + "Each pass-through from the block screen spends one.",
+            actionTitle: "Add an open limit"
+        ) { showAdd = true }
     }
 
     private func row(_ rule: FlintOpenLimitRule) -> some View {
@@ -136,6 +133,7 @@ struct OpenLimitEditor: View {
                     .pickerStyle(.segmented)
                 }
             }
+            .nosFormStyle()
             .navigationTitle(existingID == nil ? "New open limit" : "Edit open limit")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

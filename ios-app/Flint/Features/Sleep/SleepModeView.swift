@@ -24,6 +24,7 @@ struct SleepModeView: View {
             allowedAppsSection
             goodToKnowSection
         }
+        .nosFormStyle()
         .navigationTitle("Sleep Mode")
         .navigationBarTitleDisplayMode(.inline)
         .onAppear { vm.refresh() }

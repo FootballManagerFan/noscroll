@@ -54,6 +54,7 @@ struct LimitsView: View {
                          + "The block screen's button spends one open to let you through.")
                 }
             }
+            .nosFormStyle()
             .navigationTitle("Limits")
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
@@ -67,16 +68,12 @@ struct LimitsView: View {
     }
 
     private var emptyState: some View {
-        VStack(spacing: 12) {
-            Image(systemName: "hourglass")
-                .font(.system(size: 44)).foregroundStyle(FlintBrand.spark)
-            Text("No time limits yet").font(.headline)
-            Text("Cap daily usage — e.g. 30 min of social, then it blocks until tomorrow. Free.")
-                .font(.subheadline).foregroundStyle(.secondary).multilineTextAlignment(.center)
-            Button { showAdd = true } label: { Text("Add a time limit") }
-                .buttonStyle(.borderedProminent).tint(FlintBrand.spark)
-        }
-        .padding(32)
+        NosEmptyState(
+            symbol: "hourglass",
+            title: "No time limits yet",
+            message: "Cap daily usage — e.g. 30 min of social, then it blocks until tomorrow.",
+            actionTitle: "Add a time limit"
+        ) { showAdd = true }
     }
 
     private func row(_ limit: FlintLimitRule) -> some View {
@@ -141,6 +138,7 @@ struct LimitEditor: View {
                     .pickerStyle(.segmented)
                 }
             }
+            .nosFormStyle()
             .navigationTitle(existingID == nil ? "New limit" : "Edit limit")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

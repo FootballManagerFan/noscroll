@@ -59,27 +59,50 @@ struct PINGateView: View {
     @State private var showError = false
 
     var body: some View {
-        VStack(spacing: 20) {
-            Text("Flint").font(.system(size: 40, weight: .medium))
-            Text("Enter PIN").foregroundStyle(.secondary)
+        VStack(spacing: 18) {
+            Spacer()
+            NosAppIcon(size: 80)
+            Text("Enter your PIN")
+                .nosLargeTitle()
+                .padding(.top, 8)
+            Text("noScroll is locked.")
+                .nosSubtitle()
             SecureField("PIN", text: $pin)
-                .textFieldStyle(.roundedBorder)
-                .frame(width: 160)
+                .keyboardType(.numberPad)
+                .font(.nosNumber(28))
                 .multilineTextAlignment(.center)
+                .frame(width: 200, height: 56)
+                .background(
+                    RoundedRectangle(cornerRadius: NosTheme.Radius.option, style: .continuous)
+                        .fill(NosTheme.Colors.surface)
+                )
+                .overlay(
+                    RoundedRectangle(cornerRadius: NosTheme.Radius.option, style: .continuous)
+                        .strokeBorder(showError ? NosTheme.Colors.danger : NosTheme.Colors.border, lineWidth: 1)
+                )
+                .padding(.top, 8)
             if showError {
-                Text("Incorrect PIN").font(.footnote).foregroundStyle(.red)
+                Text("Incorrect PIN")
+                    .font(.nosCaption)
+                    .foregroundStyle(NosTheme.Colors.danger)
             }
-            Button("Unlock") {
-                if FlintPIN.verify(pin, FlintGroupStore()) {
-                    onUnlock()
-                } else {
-                    showError = true
-                    pin = ""
-                }
-            }
-            .buttonStyle(.borderedProminent)
-            .tint(FlintBrand.spark)
+            Spacer()
+            Button("Unlock", action: unlock)
+                .buttonStyle(.nosPrimary)
+                .disabled(pin.isEmpty)
         }
-        .padding(40)
+        .padding(.horizontal, NosTheme.Spacing.gutter)
+        .padding(.bottom, 16)
+        .frame(maxWidth: .infinity)
+        .background(NosTheme.Colors.background.ignoresSafeArea())
+    }
+
+    private func unlock() {
+        if FlintPIN.verify(pin, FlintGroupStore()) {
+            onUnlock()
+        } else {
+            showError = true
+            pin = ""
+        }
     }
 }

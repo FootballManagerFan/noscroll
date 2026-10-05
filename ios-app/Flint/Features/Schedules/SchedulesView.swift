@@ -62,6 +62,7 @@ struct SchedulesView: View {
                     }
                 }
             }
+            .nosFormStyle()
             .navigationTitle("Schedules")
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
@@ -106,22 +107,13 @@ struct SchedulesView: View {
     }
 
     private var emptyState: some View {
-        VStack(spacing: 12) {
-            Image(systemName: "calendar.badge.clock")
-                .font(.system(size: 44))
-                .foregroundStyle(FlintBrand.spark)
-            Text("No schedules yet")
-                .font(.headline)
-            Text("Recurring blocks — work hours, bedtime, study time. No app-imposed cap; "
-                 + "iOS's shared background-registration pool still applies.")
-                .font(.subheadline)
-                .foregroundStyle(.secondary)
-                .multilineTextAlignment(.center)
-            Button { showAdd = true } label: { Text("Add a schedule") }
-                .buttonStyle(.borderedProminent)
-                .tint(FlintBrand.spark)
-        }
-        .padding(32)
+        NosEmptyState(
+            symbol: "calendar.badge.clock",
+            title: "No schedules yet",
+            message: "Recurring blocks — work hours, bedtime, study time. No app-imposed cap; "
+                + "iOS's shared background-registration pool still applies.",
+            actionTitle: "Add a schedule"
+        ) { showAdd = true }
     }
 
     private func row(_ rule: FlintScheduleRule) -> some View {
@@ -263,6 +255,7 @@ struct ScheduleEditor: View {
                     .pickerStyle(.segmented)
                 }
             }
+            .nosFormStyle()
             .navigationTitle(existingID == nil ? "New schedule" : "Edit schedule")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

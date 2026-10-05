@@ -51,6 +51,7 @@ targets:
         INFOPLIST_KEY_CFBundleDisplayName: noScroll
         # Light-only v1: forces light appearance app-wide, including sheets and system pickers.
         INFOPLIST_KEY_UIUserInterfaceStyle: Light
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         INFOPLIST_KEY_UILaunchScreen_Generation: "YES"
         INFOPLIST_KEY_UIApplicationSceneManifest_Generation: "YES"
         INFOPLIST_KEY_UISupportedInterfaceOrientations: "UIInterfaceOrientationPortrait"

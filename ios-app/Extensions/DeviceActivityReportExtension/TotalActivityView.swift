@@ -5,15 +5,20 @@ struct TotalActivityView: View {
     let totalActivity: String
 
     var body: some View {
-        VStack(spacing: 8) {
+        VStack(alignment: .leading, spacing: 6) {
             Text("Screen time today")
-                .font(.headline)
-                .foregroundStyle(.secondary)
+                .font(.system(size: 12, weight: .semibold))
+                .tracking(0.8)
+                .textCase(.uppercase)
+                .foregroundStyle(FlintBrand.graphite)
             Text(totalActivity)
-                .font(.system(size: 44, weight: .semibold))
+                .font(.system(size: 44, weight: .bold, design: .rounded))
+                .monospacedDigit()
                 .foregroundStyle(FlintBrand.spark)
         }
-        .padding()
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(20)
+        .background(Color.white)
     }
 }
 

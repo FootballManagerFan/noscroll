@@ -99,10 +99,12 @@ struct ScreenTimePrimingView: View {
                 .font(.nosCaption)
                 .foregroundStyle(NosTheme.Colors.textSecondary)
                 .fixedSize(horizontal: false, vertical: true)
+            #if targetEnvironment(simulator)
             Text("In the Simulator this always fails — Apple only grants Screen Time on a real iPhone.")
                 .font(.nosCaption)
                 .foregroundStyle(NosTheme.Colors.textSecondary)
                 .fixedSize(horizontal: false, vertical: true)
+            #endif
         }
         .nosCard()
     }

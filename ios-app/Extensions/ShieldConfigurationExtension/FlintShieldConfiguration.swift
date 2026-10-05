@@ -39,7 +39,7 @@ final class FlintShieldConfiguration: ShieldConfigurationDataSource {
             backgroundBlurStyle: .systemThinMaterialDark,
             backgroundColor: FlintBrand.flintUI,
             icon: nil,
-            title: ShieldConfiguration.Label(text: "Blocked by Flint", color: .white),
+            title: ShieldConfiguration.Label(text: "Put the phone down.", color: .white),
             subtitle: ShieldConfiguration.Label(text: subtitle, color: FlintBrand.stoneUI),
             primaryButtonLabel: ShieldConfiguration.Label(text: primaryButton, color: FlintBrand.onAccentUI),
             primaryButtonBackgroundColor: FlintBrand.sparkUI

@@ -121,6 +121,7 @@ struct SettingsView: View {
                 }
                 #endif
             }
+            .nosFormStyle()
             .navigationTitle("Settings")
             .onAppear { armingHealth = FlintGroupStore()?.loadArmingHealth() ?? FlintArmingHealth() }
             .alert("Set a 4–6 digit PIN", isPresented: $showSetPIN) {

@@ -18,9 +18,22 @@ struct StatsView: View {
 
     var body: some View {
         NavigationStack {
-            DeviceActivityReport(context, filter: filter)
-                .navigationTitle("Today")
-                .navigationBarTitleDisplayMode(.inline)
+            NosScreen(spacing: 20) {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("Today").nosEyebrow()
+                    Text("Your screen time").nosLargeTitle()
+                }
+                .padding(.top, 8)
+
+                DeviceActivityReport(context, filter: filter)
+                    .frame(height: 140)
+                    .nosCard(padding: 0)
+
+                Label("Straight from iOS Screen Time. It never leaves this iPhone.", systemImage: "lock.fill")
+                    .font(.nosCaption)
+                    .foregroundStyle(NosTheme.Colors.textSecondary)
+            }
+            .toolbar(.hidden, for: .navigationBar)
         }
     }
 }
