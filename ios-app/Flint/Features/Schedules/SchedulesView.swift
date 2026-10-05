@@ -175,6 +175,8 @@ struct ScheduleEditor: View {
     @State private var allowList: Bool
     @State private var selection: FamilyActivitySelection
     @State private var showPicker = false
+    @State private var showPaywall = false
+    @EnvironmentObject private var entitlements: Entitlements
 
     init(rule: FlintScheduleRule?, asNew: Bool = false, onSave: @escaping (FlintScheduleRule) -> Void) {
         self.existingID = asNew ? nil : rule?.id
@@ -242,8 +244,19 @@ struct ScheduleEditor: View {
                             Image(systemName: "chevron.right").foregroundStyle(.secondary)
                         }
                     }
-                    Toggle("Allow-list (block everything else)", isOn: $allowList)
-                        .tint(FlintBrand.spark)
+                    // Allow List is Pro; turning an existing allow-list rule off stays free.
+                    Toggle(isOn: Binding(
+                        get: { allowList },
+                        set: { on in
+                            if on && !entitlements.isPro { showPaywall = true } else { allowList = on }
+                        }
+                    )) {
+                        HStack(spacing: 8) {
+                            Text("Allow-list (block everything else)")
+                            if !entitlements.isPro { NosBadge("Pro") }
+                        }
+                    }
+                    .tint(FlintBrand.spark)
                 }
 
                 Section("Break level") {
@@ -267,6 +280,9 @@ struct ScheduleEditor: View {
                 }
             }
             .familyActivityPicker(isPresented: $showPicker, selection: $selection)
+            .sheet(isPresented: $showPaywall) {
+                PaywallView { showPaywall = false }
+            }
         }
     }
 

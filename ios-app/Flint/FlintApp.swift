@@ -18,8 +18,13 @@ struct FlintApp: App {
 struct RootView: View {
     @AppStorage(OnboardingModel.completedKey) private var onboardingCompleted = false
     @State private var locked = FlintPIN.isSet(FlintGroupStore())
+    @StateObject private var entitlements = Entitlements()
 
     var body: some View {
+        shell.environmentObject(entitlements)
+    }
+
+    @ViewBuilder private var shell: some View {
         if !onboardingCompleted {
             OnboardingFlow { onboardingCompleted = true }
         } else if locked {

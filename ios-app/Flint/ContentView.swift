@@ -6,6 +6,8 @@ import FlintCore
 struct ContentView: View {
     @StateObject private var auth = AuthorizationModel()
     @StateObject private var vm = SessionViewModel()
+    @EnvironmentObject private var entitlements: Entitlements
+    @State private var showPaywall = false
     @State private var showPicker = false
     @State private var showSaveGroup = false
     @State private var showPriming = false
@@ -20,6 +22,9 @@ struct ContentView: View {
                 .toolbar(.hidden, for: .navigationBar)
                 .familyActivityPicker(isPresented: $showPicker, selection: $vm.selection)
                 .onChange(of: vm.selection) { _ in vm.persistSelection() }
+                .onChange(of: entitlements.isPro) { isPro in
+                    if !isPro && vm.breakLevel == .hardcore { vm.breakLevel = .easy }
+                }
                 .alert("Save as group", isPresented: $showSaveGroup) {
                     TextField("Name", text: $groupName)
                     Button("Save") { vm.saveSelectionAsGroup(name: groupName); groupName = "" }
@@ -41,6 +46,9 @@ struct ContentView: View {
                         onBack: { showPriming = false },
                         onFinish: { showPriming = false }
                     )
+                }
+                .sheet(isPresented: $showPaywall) {
+                    PaywallView { showPaywall = false }
                 }
                 .task { auth.refresh() }
         }
@@ -195,8 +203,11 @@ struct ContentView: View {
                 emoji: "🔒",
                 title: "Hardcore",
                 subtitle: "Can't be stopped until it ends, and noScroll can't be deleted while it runs.",
-                isSelected: vm.breakLevel == .hardcore
-            ) { vm.breakLevel = .hardcore }
+                isSelected: vm.breakLevel == .hardcore,
+                badge: entitlements.isPro ? nil : "Pro"
+            ) {
+                if entitlements.isPro { vm.breakLevel = .hardcore } else { showPaywall = true }
+            }
         }
     }
 
@@ -294,7 +305,15 @@ struct ContentView: View {
                     .foregroundStyle(NosTheme.Colors.textSecondary)
                     .multilineTextAlignment(.center)
             }
-            if vm.emergencyPassAvailable {
+            if !entitlements.isPro {
+                Button { showPaywall = true } label: {
+                    HStack(spacing: 8) {
+                        Label("Emergency Pass", systemImage: "key.fill")
+                        NosBadge("Pro")
+                    }
+                }
+                .buttonStyle(.nosSecondary)
+            } else if vm.emergencyPassAvailable {
                 Button { vm.useEmergencyPass() } label: {
                     Label("Use Emergency Pass (1 a week)", systemImage: "key.fill")
                 }

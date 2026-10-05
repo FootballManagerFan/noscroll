@@ -22,6 +22,8 @@ struct LimitsView: View {
     @StateObject private var vm = LimitsViewModel()
     @State private var showAdd = false
     @State private var editing: FlintLimitRule?
+    @State private var showPaywall = false
+    @EnvironmentObject private var entitlements: Entitlements
 
     var body: some View {
         NavigationStack {
@@ -44,10 +46,21 @@ struct LimitsView: View {
                 }
 
                 Section {
-                    NavigationLink {
-                        OpenLimitsView()
-                    } label: {
-                        Label("Open Limits", systemImage: "hand.tap")
+                    if entitlements.isPro {
+                        NavigationLink {
+                            OpenLimitsView()
+                        } label: {
+                            Label("Open Limits", systemImage: "hand.tap")
+                        }
+                    } else {
+                        Button { showPaywall = true } label: {
+                            HStack {
+                                Label("Open Limits", systemImage: "hand.tap")
+                                    .foregroundStyle(NosTheme.Colors.textPrimary)
+                                Spacer()
+                                NosBadge("Pro")
+                            }
+                        }
                     }
                 } footer: {
                     Text("Cap opens per day instead of minutes — e.g. 3 opens of social. "
@@ -62,6 +75,7 @@ struct LimitsView: View {
                 }
             }
             .sheet(isPresented: $showAdd) { LimitEditor(limit: nil) { vm.save($0) } }
+            .sheet(isPresented: $showPaywall) { PaywallView { showPaywall = false } }
             .sheet(item: $editing) { limit in LimitEditor(limit: limit) { vm.save($0) } }
             .onAppear { vm.refresh() }
         }

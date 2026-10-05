@@ -1,7 +1,7 @@
 import SwiftUI
 import FlintCore
 
-/// Drives the first-run funnel: quiz → plan → Screen Time priming. Answers stay on device in
+/// Drives the first-run funnel: quiz → plan → Screen Time priming → soft paywall. Answers stay on device in
 /// standard `UserDefaults` (the extensions never need them).
 @MainActor
 final class OnboardingModel: ObservableObject {
@@ -9,7 +9,7 @@ final class OnboardingModel: ObservableObject {
     nonisolated static let answersKey = "ns.onboarding.answers"
 
     enum Step: Int, CaseIterable {
-        case welcome, screenTime, pulls, moments, goals, struggles, building, plan, permission
+        case welcome, screenTime, pulls, moments, goals, struggles, building, plan, permission, paywall
     }
 
     @Published private(set) var step: Step = .welcome
@@ -44,7 +44,7 @@ final class OnboardingModel: ObservableObject {
         case .moments: !answers.moments.isEmpty
         case .goals: !answers.goals.isEmpty
         case .struggles: !answers.struggles.isEmpty
-        case .welcome, .building, .plan, .permission: true
+        case .welcome, .building, .plan, .permission, .paywall: true
         }
     }
 

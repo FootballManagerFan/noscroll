@@ -6,6 +6,8 @@ struct SettingsView: View {
     @State private var showSetPIN = false
     @State private var newPIN = ""
     @State private var armingHealth = FlintGroupStore()?.loadArmingHealth() ?? FlintArmingHealth()
+    @State private var showPaywall = false
+    @EnvironmentObject private var entitlements: Entitlements
 
     var body: some View {
         NavigationStack {
@@ -114,16 +116,26 @@ struct SettingsView: View {
                 }
 
                 #if DEBUG
-                Section("Developer") {
+                Section {
+                    Toggle("Pro (stub purchase)", isOn: Binding(
+                        get: { entitlements.isPro },
+                        set: { entitlements.debugSetPro($0) }
+                    ))
+                    Button("Show paywall") { showPaywall = true }
                     Button("Replay onboarding") {
                         UserDefaults.standard.set(false, forKey: OnboardingModel.completedKey)
                     }
+                } header: {
+                    Text("Developer")
+                } footer: {
+                    Text("DEBUG builds only. No real billing yet — the stub never charges.")
                 }
                 #endif
             }
             .nosFormStyle()
             .navigationTitle("Settings")
             .onAppear { armingHealth = FlintGroupStore()?.loadArmingHealth() ?? FlintArmingHealth() }
+            .sheet(isPresented: $showPaywall) { PaywallView { showPaywall = false } }
             .alert("Set a 4–6 digit PIN", isPresented: $showSetPIN) {
                 TextField("PIN", text: $newPIN)
                 Button("Save") {

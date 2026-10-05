@@ -1,10 +1,11 @@
 import SwiftUI
 import FlintCore
 
-/// First-run funnel: welcome → five questions → building → plan → Screen Time priming.
+/// First-run funnel: welcome → five questions → building → plan → Screen Time priming → paywall.
 struct OnboardingFlow: View {
     let onFinish: () -> Void
 
+    @EnvironmentObject private var entitlements: Entitlements
     @StateObject private var model = OnboardingModel()
     @StateObject private var auth = AuthorizationModel()
 
@@ -103,7 +104,19 @@ struct OnboardingFlow: View {
             OnboardingPlanView(plan: model.plan) { model.next() }
 
         case .permission:
-            ScreenTimePrimingView(auth: auth, onBack: { model.back() }, onFinish: finish)
+            ScreenTimePrimingView(auth: auth, onBack: { model.back() }, onFinish: afterPermission)
+
+        case .paywall:
+            PaywallView(onClose: finish)
+        }
+    }
+
+    /// Pro users (e.g. replaying onboarding) skip the paywall.
+    private func afterPermission() {
+        if entitlements.isPro {
+            finish()
+        } else {
+            model.advance(from: .permission)
         }
     }
 
@@ -115,4 +128,5 @@ struct OnboardingFlow: View {
 
 #Preview("Onboarding") {
     OnboardingFlow {}
+        .environmentObject(Entitlements())
 }

@@ -63,7 +63,7 @@ OS-level enforcement that makes a block real. That's what this project is.
 | Recurring / Smart Schedules | capped | ✅ uncapped | capped | **✅ no noScroll-imposed count cap¹** |
 | **Allow List** (brick-phone mode) | — | 💰 | — | **💰** |
 | **Deep Focus / Hardcore** (non-bypassable) | — | 💰 | — | **💰** |
-| Open Limits (no-reset tier) | — | 💰 | — | **💰** |
+| Open Limits | ✅ (no-reset tier 💰) | ✅ | — | **💰** |
 | **Emergency Pass** | — | 💰 | — | **💰, weekly** |
 | Accounts required | — | — | **None** | **None** |
 | Telemetry / ads | — | — | **None** | **None** |
@@ -72,8 +72,10 @@ OS-level enforcement that makes a block real. That's what this project is.
 Time Limits, Open Limits, and other monitors. noScroll records and surfaces actual refusals; the
 near-cap warning around 20 registrations is empirical, not an Apple-published limit.
 
-> Note: the Free/Pro split above is the intended direction, not yet implemented — there is no
-> billing or entitlement layer in the codebase today. See [Status](#status).
+> Note: on iOS the Pro locks and paywall are in place, but purchases run through a stub
+> (`ios-app/Flint/Features/Paywall/Entitlements.swift`) that never charges — real StoreKit /
+> RevenueCat billing isn't wired yet, and gating is UI-only (Shortcuts and already-saved rules
+> aren't gated). Android has no Pro tier yet.
 
 Full feature parity map: [`docs/research/01-opal-feature-inventory.md`](docs/research/01-opal-feature-inventory.md).
 
