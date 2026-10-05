@@ -2,7 +2,7 @@
     <!-- Brand palette — mirrors design/tokens.json (the single source; keep in sync). -->
     <color name="flint_charcoal">#0B1120</color>
     <color name="flint_graphite">#55606B</color>
-    <color name="flint_spark">#1C7ED6</color>
+    <color name="flint_spark">#1F6BFF</color>
     <color name="flint_ember">#9FD8F5</color>
     <color name="flint_stone">#F2FAFF</color>
 </resources>

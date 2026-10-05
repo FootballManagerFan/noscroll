@@ -14,7 +14,7 @@ struct FocusFilterView: View {
     var body: some View {
         Form {
             Section {
-                Text("Attach Flint to a system Focus (Work, Sleep, …) so a block starts the moment "
+                Text("Attach noScroll to a system Focus (Work, Sleep, …) so a block starts the moment "
                      + "that Focus turns on — and stops when it turns off. No tap required.")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
@@ -52,7 +52,7 @@ struct FocusFilterView: View {
             }
 
             Section {
-                Label("Settings → Focus → pick a Focus → Add Filter → Flint", systemImage: "moon.circle")
+                Label("Settings → Focus → pick a Focus → Add Filter → noScroll", systemImage: "moon.circle")
                     .font(.footnote)
             } header: {
                 Text("How to turn it on")

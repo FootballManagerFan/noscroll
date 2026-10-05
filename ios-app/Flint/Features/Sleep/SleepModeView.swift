@@ -141,7 +141,7 @@ struct SleepModeView: View {
                 + "Harder strictness — a strong nudge, and you stay in control."
         case .fullAssist:
             return "From bedtime to wake-up, everything except your Allowed apps is shielded, "
-                + "registered at Hardcore strictness. Flint's free weekly Emergency Pass is the "
+                + "registered at Hardcore strictness. The weekly Emergency Pass is the "
                 + "escape hatch for Hardcore blocks; in this build, turning Sleep Mode off also "
                 + "lifts the night shield."
         }
@@ -209,12 +209,12 @@ struct SleepModeView: View {
 
     private var goodToKnowSection: some View {
         Section {
-            Label("Sleep Mode runs on Flint's Schedules engine — its windows appear in Schedules "
+            Label("Sleep Mode runs on noScroll's Schedules engine — its windows appear in Schedules "
                   + "as \u{201C}Sleep Mode\u{201D} and \u{201C}Morning Assist\u{201D} and re-arm "
                   + "whenever you edit here.",
                   systemImage: "calendar.badge.clock")
                 .font(.footnote)
-            Label("No soundscapes, sleep stories or meditations — Flint v1 is a blocking control "
+            Label("No soundscapes, sleep stories or meditations — noScroll v1 is a blocking control "
                   + "by design.",
                   systemImage: "speaker.slash")
                 .font(.footnote)

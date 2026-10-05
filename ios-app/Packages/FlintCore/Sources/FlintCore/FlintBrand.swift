@@ -12,12 +12,17 @@ import UIKit
 public enum FlintBrand {
     public static let flintHex: UInt32 = 0x0B1120 // Ink
     public static let graphiteHex: UInt32 = 0x55606B // Slate
-    public static let sparkHex: UInt32 = 0x1C7ED6 // Pop Blue — primary accent
+    public static let sparkHex: UInt32 = 0x1F6BFF // Pop Blue — primary accent
     public static let emberHex: UInt32 = 0x9FD8F5 // Baby Blue — signature/light accent
-    public static let bronzeHex: UInt32 = 0x14548C // Deep Blue — pressed state
+    public static let bronzeHex: UInt32 = 0x1650D6 // Deep Blue — pressed state
     public static let stoneHex: UInt32 = 0xF2FAFF // Cloud
     public static let onAccentHex: UInt32 = 0xFFFFFF // text/icon on Pop Blue / Deep Blue
     public static let onAccentMutedHex: UInt32 = 0x0B1120 // text/icon on Baby Blue
+    public static let mistHex: UInt32 = 0x9FB3C8 // secondary text on dark
+    public static let selectedFillHex: UInt32 = 0xE3F3FC // selected option / plan card fill
+    public static let cardBorderHex: UInt32 = 0xDCE9F3 // hairline around white cards
+    public static let gradientStartHex: UInt32 = 0x4A8DFF // primary CTA gradient, leading
+    public static let gradientEndHex: UInt32 = 0x1F5EFF // primary CTA gradient, trailing
 
     public static var flint: Color { color(flintHex) }
     public static var graphite: Color { color(graphiteHex) }
@@ -27,6 +32,11 @@ public enum FlintBrand {
     public static var stone: Color { color(stoneHex) }
     public static var onAccent: Color { color(onAccentHex) }
     public static var onAccentMuted: Color { color(onAccentMutedHex) }
+    public static var mist: Color { color(mistHex) }
+    public static var selectedFill: Color { color(selectedFillHex) }
+    public static var cardBorder: Color { color(cardBorderHex) }
+    public static var gradientStart: Color { color(gradientStartHex) }
+    public static var gradientEnd: Color { color(gradientEndHex) }
 
     private static func color(_ hex: UInt32) -> Color {
         Color(

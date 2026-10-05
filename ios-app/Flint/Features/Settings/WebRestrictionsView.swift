@@ -41,7 +41,7 @@ struct WebRestrictionsView: View {
                     DomainListSection(
                         title: "Also block",
                         footer: "Block these sites on top of the adult-content filter. Opal can't do "
-                              + "this on iOS — Flint lets you type any domain.",
+                              + "this on iOS — noScroll lets you type any domain.",
                         addPrompt: "Add a site to block",
                         domains: $restrictions.blockedDomains
                     )

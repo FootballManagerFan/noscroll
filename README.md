@@ -11,7 +11,7 @@ app & website blocking, schedules without a noScroll-imposed count cap, hardcore
 time & open limits — with
 **no paywall on the basics, no accounts, no telemetry**. Local-first. Built in the open.
 
-![status](https://img.shields.io/badge/status-early%20development-1C7ED6?style=flat-square)
+![status](https://img.shields.io/badge/status-early%20development-1F6BFF?style=flat-square)
 ![license](https://img.shields.io/badge/license-MIT-0B1120?style=flat-square)
 ![ios](https://img.shields.io/badge/iOS-16%2B-0B1120?style=flat-square)
 ![android](https://img.shields.io/badge/Android-6%2B-0B1120?style=flat-square)

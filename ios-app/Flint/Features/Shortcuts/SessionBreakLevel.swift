@@ -15,7 +15,7 @@ enum SessionBreakLevel: String, AppEnum {
     static var caseDisplayRepresentations: [SessionBreakLevel: DisplayRepresentation] = [
         .easy: "Easy — stop anytime",
         .harder: "Harder — adds friction to stop",
-        .hardcore: "Hardcore — no early exit (free in Flint)",
+        .hardcore: "Hardcore — no early exit",
     ]
 
     init(_ level: BreakLevel) { self = SessionBreakLevel(rawValue: level.rawValue) ?? .easy }

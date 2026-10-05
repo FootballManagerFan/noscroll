@@ -30,9 +30,9 @@ object FlintPalette {
     // Brand palette
     val Flint = Color(0xFF0B1120) // Ink
     val Graphite = Color(0xFF55606B) // Slate
-    val Spark = Color(0xFF1C7ED6) // Pop Blue — primary accent
+    val Spark = Color(0xFF1F6BFF) // Pop Blue — primary accent
     val Ember = Color(0xFF9FD8F5) // Baby Blue — signature/light accent
-    val Bronze = Color(0xFF14548C) // Deep Blue — pressed state
+    val Bronze = Color(0xFF1650D6) // Deep Blue — pressed state
     val Stone = Color(0xFFF2FAFF) // Cloud
     val Ash = Color(0xFF9FB3C8) // Mist
     val OnAccent = Color(0xFFFFFFFF) // text/icon on Pop Blue / Deep Blue

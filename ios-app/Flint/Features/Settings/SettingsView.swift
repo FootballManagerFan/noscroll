@@ -57,7 +57,7 @@ struct SettingsView: View {
                 } header: {
                     Text("Automation")
                 } footer: {
-                    Text("Attach Flint to a system Focus (Work, Sleep, …) so blocking starts and "
+                    Text("Attach noScroll to a system Focus (Work, Sleep, …) so blocking starts and "
                          + "stops with it.")
                 }
 
@@ -79,7 +79,7 @@ struct SettingsView: View {
                                 .foregroundStyle(.green)
                         }
                         if armingHealth.isNearCap {
-                            Text("Flint last armed \(armingHealth.armedTotal) background "
+                            Text("noScroll last armed \(armingHealth.armedTotal) background "
                                  + "registrations. iOS does not publish a fixed limit; refusals "
                                  + "have been observed around "
                                  + "\(FlintArmingHealth.observedActivityThreshold). Consider "
@@ -91,18 +91,18 @@ struct SettingsView: View {
                         Text("Blocking health")
                     } footer: {
                         Text("Whether every enabled schedule, Time Limit, and Open Limit passed "
-                             + "Flint's checks and was accepted by iOS at the last re-arm. iOS "
+                             + "noScroll's checks and was accepted by iOS at the last re-arm. iOS "
                              + "provides a finite, undocumented registration pool shared by "
-                             + "Flint's monitors; "
-                             + "Flint surfaces a refused registration instead of letting the rule "
+                             + "noScroll's monitors; "
+                             + "noScroll surfaces a refused registration instead of letting the rule "
                              + "die silently.")
                     }
                 }
 
                 Section("Stronger protection") {
                     Text("For true anti-uninstall protection, set a **system Screen Time passcode** "
-                         + "(Settings → Screen Time). It prevents deleting Flint or turning blocking "
-                         + "off. Flint can't enforce that itself — it's an Apple limitation.")
+                         + "(Settings → Screen Time). It prevents deleting noScroll or turning blocking "
+                         + "off. noScroll can't enforce that itself — it's an Apple limitation.")
                         .font(.footnote)
                         .foregroundStyle(.secondary)
                 }

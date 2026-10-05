@@ -18,8 +18,8 @@ token changes here, update the platform themes to match.
 |---|---|---|
 | Ink | `#0B1120` | dark base / anchor / dark surfaces |
 | Slate | `#55606B` | secondary / muted text |
-| **Pop Blue** | `#1C7ED6` | **primary accent** — CTAs, the slash |
-| Deep Blue | `#14548C` | pressed state |
+| **Pop Blue** | `#1F6BFF` | **primary accent** — CTAs, the slash |
+| Deep Blue | `#1650D6` | pressed state |
 | Baby Blue | `#9FD8F5` | signature accent / light highlight |
 | Cloud | `#F2FAFF` | light surface / background |
 | White | `#FFFFFF` | surfaces / negative space |

@@ -15,7 +15,7 @@ enum FlintShortcutsError: Error, LocalizedError {
     var errorDescription: String? {
         switch self {
         case .noSelectionAvailable:
-            return "Open Flint and choose the apps or websites to block first — Shortcuts reuses your saved selection."
+            return "Open noScroll and choose the apps or websites to block first — Shortcuts reuses your saved selection."
         case .noActiveSession:
             return "Nothing is being blocked right now."
         case .hardcoreLocked:
