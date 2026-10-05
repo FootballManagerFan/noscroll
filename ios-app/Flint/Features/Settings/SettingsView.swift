@@ -112,6 +112,14 @@ struct SettingsView: View {
                         .font(.footnote)
                         .foregroundStyle(.secondary)
                 }
+
+                #if DEBUG
+                Section("Developer") {
+                    Button("Replay onboarding") {
+                        UserDefaults.standard.set(false, forKey: OnboardingModel.completedKey)
+                    }
+                }
+                #endif
             }
             .navigationTitle("Settings")
             .onAppear { armingHealth = FlintGroupStore()?.loadArmingHealth() ?? FlintArmingHealth() }

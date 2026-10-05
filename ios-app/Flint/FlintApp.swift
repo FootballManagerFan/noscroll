@@ -14,12 +14,15 @@ struct FlintApp: App {
     }
 }
 
-/// Top-level shell: an optional app-PIN gate, then the tabs.
+/// Top-level shell: first-run onboarding, then an optional app-PIN gate, then the tabs.
 struct RootView: View {
+    @AppStorage(OnboardingModel.completedKey) private var onboardingCompleted = false
     @State private var locked = FlintPIN.isSet(FlintGroupStore())
 
     var body: some View {
-        if locked {
+        if !onboardingCompleted {
+            OnboardingFlow { onboardingCompleted = true }
+        } else if locked {
             PINGateView { locked = false }
         } else {
             TabView {
