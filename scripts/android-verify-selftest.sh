@@ -120,12 +120,12 @@ XML
 # only the bare one, so the no-overlay table (activity window only) must NOT match.
 cat > "$WORK/windows-overlay.txt" <<'WIN'
 WINDOW MANAGER WINDOWS (dumpsys window windows)
-  Window #7 Window{1f2d0c8 u0 com.flint.peakfocus}:
-  Window #12 Window{dd4d7c1 u0 com.flint.peakfocus/com.flint.peakfocus.MainActivity}:
+  Window #7 Window{1f2d0c8 u0 com.maxwelljackson.noscroll}:
+  Window #12 Window{dd4d7c1 u0 com.maxwelljackson.noscroll/com.flint.peakfocus.MainActivity}:
 WIN
 cat > "$WORK/windows-noverlay.txt" <<'WIN'
 WINDOW MANAGER WINDOWS (dumpsys window windows)
-  Window #12 Window{dd4d7c1 u0 com.flint.peakfocus/com.flint.peakfocus.MainActivity}:
+  Window #12 Window{dd4d7c1 u0 com.maxwelljackson.noscroll/com.flint.peakfocus.MainActivity}:
 WIN
 
 # ---------------------------------------------------------------------------

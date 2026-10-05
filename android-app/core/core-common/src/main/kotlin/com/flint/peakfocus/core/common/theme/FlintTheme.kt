@@ -22,8 +22,8 @@ import androidx.compose.ui.unit.sp
  * noScroll brand palette + semantic values. Mirror of design/tokens.json — keep in sync
  * (tokens.json is the single source; this file is its hand-maintained Compose binding).
  *
- * Symbol names below still say `Flint*` — a code-identifier rename (this object, the
- * `com.flint.peakfocus` package, and every call site) is a separate, larger follow-up; only
+ * Symbol names below still say `Flint*` — renaming internal Kotlin packages and types is an
+ * optional cleanup (the store applicationId is already noScroll's); only
  * the hex values have been repointed to the noScroll palette so far.
  */
 object FlintPalette {

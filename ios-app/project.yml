@@ -14,7 +14,7 @@
 name: Flint
 
 options:
-  bundleIdPrefix: com.flint.peakfocus
+  bundleIdPrefix: com.maxwelljackson.noscroll
   deploymentTarget:
     iOS: "16.0"
   createIntermediateGroups: true
@@ -45,7 +45,7 @@ targets:
       - Flint
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.flint.peakfocus
+        PRODUCT_BUNDLE_IDENTIFIER: com.maxwelljackson.noscroll
         CODE_SIGN_ENTITLEMENTS: Flint/Flint.entitlements
         GENERATE_INFOPLIST_FILE: "YES"
         INFOPLIST_KEY_CFBundleDisplayName: noScroll
@@ -73,7 +73,7 @@ targets:
       - Extensions/DeviceActivityMonitorExtension
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.flint.peakfocus.monitor
+        PRODUCT_BUNDLE_IDENTIFIER: com.maxwelljackson.noscroll.monitor
         CODE_SIGN_ENTITLEMENTS: Extensions/DeviceActivityMonitorExtension/Monitor.entitlements
         INFOPLIST_FILE: Extensions/DeviceActivityMonitorExtension/Info.plist
     dependencies:
@@ -87,7 +87,7 @@ targets:
       - Extensions/ShieldConfigurationExtension
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.flint.peakfocus.shield-config
+        PRODUCT_BUNDLE_IDENTIFIER: com.maxwelljackson.noscroll.shield-config
         CODE_SIGN_ENTITLEMENTS: Extensions/ShieldConfigurationExtension/ShieldConfig.entitlements
         INFOPLIST_FILE: Extensions/ShieldConfigurationExtension/Info.plist
     dependencies:
@@ -101,7 +101,7 @@ targets:
       - Extensions/ShieldActionExtension
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.flint.peakfocus.shield-action
+        PRODUCT_BUNDLE_IDENTIFIER: com.maxwelljackson.noscroll.shield-action
         CODE_SIGN_ENTITLEMENTS: Extensions/ShieldActionExtension/ShieldAction.entitlements
         INFOPLIST_FILE: Extensions/ShieldActionExtension/Info.plist
     dependencies:
@@ -115,7 +115,7 @@ targets:
       - Extensions/DeviceActivityReportExtension
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.flint.peakfocus.report
+        PRODUCT_BUNDLE_IDENTIFIER: com.maxwelljackson.noscroll.report
         CODE_SIGN_ENTITLEMENTS: Extensions/DeviceActivityReportExtension/Report.entitlements
         INFOPLIST_FILE: Extensions/DeviceActivityReportExtension/Info.plist
     dependencies:
@@ -129,7 +129,7 @@ targets:
       - Tests
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.flint.peakfocus.tests
+        PRODUCT_BUNDLE_IDENTIFIER: com.maxwelljackson.noscroll.tests
         GENERATE_INFOPLIST_FILE: "YES"
     dependencies:
       - package: FlintCore

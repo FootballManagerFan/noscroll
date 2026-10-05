@@ -9,7 +9,9 @@ android {
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.flint.peakfocus"
+        // Store identity — permanent once published. `namespace` (above) only names the
+        // R/BuildConfig classes, so Kotlin packages keep their com.flint.peakfocus names.
+        applicationId = "com.maxwelljackson.noscroll"
         minSdk = 23
         targetSdk = 35
         versionCode = 1

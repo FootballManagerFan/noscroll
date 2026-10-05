@@ -187,7 +187,7 @@ _av_on_exit() {
   local code=$?
   "$ADB" exec-out screencap -p > "$OUT_DIR/99-final.png" 2>/dev/null || true
   "$ADB" shell dumpsys window windows > "$OUT_DIR/99-final-windows.txt" 2>/dev/null || true
-  "$ADB" logcat -d -v time 2>/dev/null | grep -iE "peakfocus|flint" | tail -300 \
+  "$ADB" logcat -d -v time 2>/dev/null | grep -iE "noscroll|peakfocus|flint" | tail -300 \
     > "$OUT_DIR/99-logcat-flint.txt" || true
   if (( code == 0 )); then
     log "END $(date -u +%Y-%m-%dT%H:%M:%SZ) — exit 0"
@@ -345,7 +345,7 @@ wait_badge_text() { wait_text "$(uc "$1")" "${2:-12}"; }
 
 # The Path B overlay window's title is the bare package name; MainActivity /
 # BlockActivity windows carry a "/Class" suffix and never match this.
-has_bare_flint_overlay() { grep -Eq 'Window\{[^ ]+ u0 com\.flint\.peakfocus\}' "$1"; }
+has_bare_flint_overlay() { grep -Eq 'Window\{[^ ]+ u0 com\.maxwelljackson\.noscroll\}' "$1"; }
 
 assert_overlay() {
   windows_dump "$1"

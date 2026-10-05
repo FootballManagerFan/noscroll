@@ -6,9 +6,8 @@ import UIKit
 /// noScroll brand palette. Mirror of design/tokens.json — keep in sync.
 /// Provides both SwiftUI `Color` (host app) and `UIColor` (shield extension) accessors.
 ///
-/// Symbol names below still say `Flint*`/`flint*` — a code-identifier rename (this type, the
-/// `com.flint.peakfocus`-equivalent bundle IDs, the App Group, and every call site) is a
-/// separate, larger follow-up; only the hex values have been repointed to the noScroll palette.
+/// Symbol names still say `Flint*`/`flint*` — renaming internal types is an optional cleanup;
+/// the store-visible bundle IDs and App Group are already noScroll's.
 public enum FlintBrand {
     public static let flintHex: UInt32 = 0x0B1120 // Ink
     public static let graphiteHex: UInt32 = 0x55606B // Slate

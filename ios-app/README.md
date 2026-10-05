@@ -27,13 +27,13 @@ Then in Xcode: select the **Flint** scheme, set your **Development Team** on eac
 
 | Target | Bundle ID | Role |
 |---|---|---|
-| `Flint` | `com.flint.peakfocus` | SwiftUI host app: authorization, app picker, sessions/limits UI, embeds the stats report |
+| `Flint` | `com.maxwelljackson.noscroll` | SwiftUI host app: authorization, app picker, sessions/limits UI, embeds the stats report |
 | `DeviceActivityMonitorExtension` | `…​.monitor` | Applies/clears shields on schedule + threshold boundaries (so blocking survives app death) |
-| `ShieldConfigurationExtension` | `…​.shield-config` | The branded "Peak Focus" block screen |
+| `ShieldConfigurationExtension` | `…​.shield-config` | The branded "Put the phone down." block screen |
 | `ShieldActionExtension` | `…​.shield-action` | Block-screen button handling |
 | `DeviceActivityReportExtension` | `…​.report` | Usage-stats UI — the **only** legal source of per-app usage + localized names |
 
-All five share the **`group.com.flint.peakfocus`** App Group and the
+All five share the **`group.com.maxwelljackson.noscroll`** App Group and the
 `com.apple.developer.family-controls` entitlement. Shared logic lives in the **`FlintCore`**
 Swift package (`Packages/FlintCore`) so the app and every extension reuse one implementation
 (extensions can't import the app target).
