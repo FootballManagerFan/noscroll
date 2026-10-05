@@ -3,6 +3,10 @@ import FlintCore
 
 @main
 struct FlintApp: App {
+    init() {
+        NosTheme.applyChromeAppearance()
+    }
+
     var body: some Scene {
         WindowGroup {
             RootView()

@@ -49,6 +49,8 @@ targets:
         CODE_SIGN_ENTITLEMENTS: Flint/Flint.entitlements
         GENERATE_INFOPLIST_FILE: "YES"
         INFOPLIST_KEY_CFBundleDisplayName: noScroll
+        # Light-only v1: forces light appearance app-wide, including sheets and system pickers.
+        INFOPLIST_KEY_UIUserInterfaceStyle: Light
         INFOPLIST_KEY_UILaunchScreen_Generation: "YES"
         INFOPLIST_KEY_UIApplicationSceneManifest_Generation: "YES"
         INFOPLIST_KEY_UISupportedInterfaceOrientations: "UIInterfaceOrientationPortrait"
