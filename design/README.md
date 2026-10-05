@@ -36,7 +36,7 @@ should feel the same: direct, fast, no manipulation, no guilt loops.
 
 ## Where these tokens live in code
 
-- **iOS:** `ios-app/Packages/FlintCore/Sources/FlintCore/FlintBrand.swift` — hex values mirrored here; symbol names still say `Flint*` pending the code-identifier rename.
+- **iOS:** `ios-app/Packages/FlintCore/Sources/FlintCore/FlintBrand.swift` — hex values mirrored here; symbol names still say `Flint*` pending the code-identifier rename. The SwiftUI component kit built on them (theme, buttons, cards, option cards, tiles, sticky CTA) lives in `ios-app/Flint/DesignSystem/` — every component has a `#Preview`.
 - **Android:** `android-app/core/core-common/.../theme/FlintTheme.kt` + `android-app/app/src/main/res/values/colors.xml` — hex values mirrored here; symbol/resource names still say `Flint*`/`flint_*` pending the code-identifier rename.
 
 > No codegen for v1 — tokens are mirrored by hand. If the set grows, add a generator that emits

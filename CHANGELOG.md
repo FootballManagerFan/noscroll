@@ -6,6 +6,15 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning: [S
 ## [Unreleased]
 
 ### iOS
+- **noScroll redesign.** Light-only UI on a new SwiftUI component kit
+  (`ios-app/Flint/DesignSystem/`): electric-blue accent, white bordered cards, gradient pill CTAs
+  pinned to the bottom, option cards, and an app icon (iOS had none). New first-run onboarding —
+  five quiz questions, a plan screen whose numbers come only from the user's own answers
+  (`FlintFocusPlan`, unit tested), and a priming screen before the real Screen Time prompt with a
+  retry / continue-without path. The Focus tab is rebuilt (duration chips, strictness cards,
+  countdown ring); Harder sessions now confirm before stopping early. A Pro paywall locks
+  Hardcore, Emergency Pass, the schedule Allow List, and Open Limits, backed by a stub purchase
+  service that never charges — real StoreKit/RevenueCat billing is not wired yet.
 - **Blocking Health now reports the whole enabled → attempted → armed funnel.** Schedule rules
   rejected by Flint's window validation now enter the same health ledger as registrations iOS
   refuses, so Settings cannot show green when an enabled rule was skipped before
